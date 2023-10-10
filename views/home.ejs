@@ -1,0 +1,23 @@
+<%- include("partials/header") -%>
+
+<article>
+  <h1>Breaking News</h1>
+  <%= homeStartingContent.substring(0, 140)+'...' %>
+  <h4>By<em> Mumbo Jombo</em></h4>
+</article>
+<a class="link-new-post" href="/compose">
+  <button class="btn-new-post" type="button">+</button>
+</a>
+
+<% posts.forEach(function(post){ %>
+<article>
+  <h1><%= post.title %></h1>
+  <%= post.postBody.substring(0, 140)+'...' %>
+  <a href='/posts/<%=post.title%>'> Read more</a>
+  <h4>By <em><%= post.author %></em></h4>
+</article>
+<%})%>
+
+
+
+<%- include("partials/footer") -%>
